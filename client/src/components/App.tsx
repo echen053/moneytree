@@ -20,17 +20,15 @@ import Insights from "./Insights";
 import Garden from "./Garden";
 import { useState } from "react";
 
-// Firebase configuration settings using environment variables for security.
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_MAPBOX_TOKEN, // API key for Firebase authentication
-  authDomain: process.env.AUTH_DOMAIN, // Firebase Auth domain
-  projectId: process.env.PROJECT_ID, // Firebase project ID
-  storageBucket: process.env.STORAGE_BUCKET, // Storage bucket for file storage
-  messagingSenderId: process.env.MESSAGING_SENDER_ID, // Messaging sender ID for notifications
-  appId: process.env.APP_ID, // App ID for the Firebase project
+  apiKey: import.meta.env.VITE_MAPBOX_TOKEN,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
 };
 
-// Initialize Firebase app with the provided configuration
 initializeApp(firebaseConfig);
 
 function App() {
@@ -50,7 +48,6 @@ function App() {
         <SignedIn>
           <Navbar />
           <div className="App-header">
-            {/* <h1 aria-label="Project Header">Welcome to MoneyTree!</h1> */}
             <div className="auth-controls">
               <UserButton />
               <SignOutButton />
@@ -100,10 +97,28 @@ function App() {
         {/* Display login page and prompt user to sign in if not logged in */}
         <SignedOut>
           <div className="home-page">
+            {/* Emoji Row */}
+            <div className="emoji-row">
+              <span className="emoji">🎋</span>
+              <span className="emoji">🌱</span>
+              <span className="emoji">🍁</span>
+              <span className="emoji">🌴</span>
+              <span className="emoji">🌵</span>
+            </div>
+
             <h2>Welcome to MoneyTree 🌱</h2>
             <SignInButton mode="modal">
               <button className="sign-in-button">Sign In</button>
             </SignInButton>
+
+            {/* Emoji Row */}
+            <div className="emoji-row">
+              <span className="emoji">🎋</span>
+              <span className="emoji">🌱</span>
+              <span className="emoji">🍁</span>
+              <span className="emoji">🌴</span>
+              <span className="emoji">🌵</span>
+            </div>
           </div>
 
           <Routes>

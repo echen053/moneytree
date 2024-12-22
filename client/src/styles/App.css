@@ -113,15 +113,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ensure it takes the full height of the viewport */
-  background-color: #eef7ee; /* Matches your existing App content style */
+  min-height: 100vh;
+  background-color: #eef7ee;
   font-family: "Calistoga", cursive;
 }
 
 .home-page h2 {
   color: #3a833b;
   font-size: 24px;
-  margin-bottom: 20px; /* Adds spacing below the welcome text */
+  margin-bottom: 20px;
 }
 
 .home-page button {
@@ -138,5 +138,17 @@
 }
 
 .home-page button:hover {
-  background-color: #2d6b2f; /* Slightly darker green on hover */
+  background-color: #2d6b2f;
+}
+
+.emoji-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 18px;
+  gap: 10px;
+}
+
+.emoji {
+  font-size: 20px;
 }
