@@ -29,10 +29,6 @@ MoneyTree is a visually engaging and intuitive budget management web application
 
 ## Technology Stack
 
-First, clone the repo, and start the server in `/server` by running `mvn package` and then `./run`. Then, in `/client`, and then `/src`, run `/npm install` followed by `/npm start` to access the site. To run the playwright tests, go into `/client` and then `/src`, then run `/npx playwright test --ui` and run each test.
-
-# Collaboration
-
 - Frontend: React, TypeScript
 - Backend: Java, Spark Java
 - Database: Firebase Firestore
