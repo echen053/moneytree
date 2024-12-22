@@ -4,13 +4,6 @@
 
 Emma Chen (Brown '27), Erin Kim (Brown '27), Katerina Nguyen (Brown '27), Sophia Li (Brown '27)
 
-Our Progress:
-
-- Planning - https://docs.google.com/document/d/1HctkuyDgykZczHIRPu9TgDxns2f8GtOZv4iKrOjjRmA/edit?usp=sharing
-- Coding - Week 1 Check-in: https://docs.google.com/document/d/1MNYlKCp3uWZzA1BpBkt944SNxTL7zm0sRkAbSA9TdMg/edit?usp=sharing
-- Coding - Week 2 Check-in: https://docs.google.com/document/d/1--FoDT1MVpiVcfaIbIy6GaxAclKDWIE2C2Nuf-Nxxbo/edit?usp=sharing
-- Coding - Week 3 Check-in: https://docs.google.com/document/d/1s9paFIVIIkuDJJ_wEnyNnGyBw23w1JhnVwvYlZIyKDc/edit?usp=sharing
-
 ## Description
 
 MoneyTree is a visually engaging and intuitive budget management web application that helps users track their expenses in a creative and interactive way. By associating budgets with plants, users can see their financial health grow (or wilt!) over time. Each budget corresponds to a plant, and its state reflects how well the user is managing their spending in relation to their budget. MoneyTree combines visual feedback with practical budgeting tools, offering an immersive experience that gamifies the process of financial responsibility.
@@ -18,6 +11,7 @@ MoneyTree is a visually engaging and intuitive budget management web application
 ## Features
 
 - Responsive design for mobile and desktop users
+- Unit tests, playwright tests, and integrated testing
 
 ### Garden View
 
@@ -32,29 +26,6 @@ MoneyTree is a visually engaging and intuitive budget management web application
 ### Insights View
 
 - Integration with OpenAI API for personalized spending summaries and advice
-
-## Front-end Testing: Playwright
-
-- successful login and logout cycle: tests basic login/logout authentication features via Clerk authentification
-- sequential brown.edu users login and access check: tests that 2 users can log in after one another
-- add and update budget to show up as plant in the garden: tests that users can add plants via the budget tab and update/delete their chosen plant in the garden tab
-- correct plants chosen and their corresponding stages are updated accordingly: test that the plant appears in the correct stage and multiple plants have various stages that can be updated respectively
-- plants persist after sign in and sign out: test that plants persist after sign in and sign out
-- test edge cases in the budget tab information fields: empty required fields: test for correct output displayed for empty required fields
-- test edge cases in the budget tab information fields: negative budget amount: test edge cases in the budget information fields: test for correct output displayed for negative budget amount
-- test edge cases in the budget tab information fields: negative spent amount: test for correct output displayed for negative spent amount
-- test edge cases in the budget tab information fields: zero budget amount: test for correct output displayed for zero budget amount
-- test edge cases in the budget tab information fields: spent amount update validation: test for correct output displayed for spent amount update validation
-- test edge cases in the budget tab information fields: whitespace in required fields: test for correct output displayed for whitespace in required fields
-- test edge cases in the budget tab information fields: non-numeric values in duration: test for correct output displayed for non-numeric values in duration
-- test edge cases in the budget tab information fields: duplicate category names: test for correct output displayed for duplicate category names
-- test edge cases in the budget tab information fields: budget deletion: test for correct output displayed when usinng the delete budget option in the Budget tab
-- test insights tab correctly contains all the correct information and functionality: test insights AI tab to contain correct fields and functionalities
-
-## Back-end Testing: Unit Testing
-
-- Unit tests for all handlers
-- Tests with mocked firebase storage and mocked OpenAI client
 
 ## Technology Stack
 
