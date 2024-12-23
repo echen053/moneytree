@@ -13,7 +13,7 @@ MoneyTree is a visually engaging and intuitive budget management web application
 ### Design Choices
 
 - Fullstack from React frontend to Java REST backend
-  \_ Responsive UI design for mobile and desktop users
+- Responsive UI design for mobile and desktop users
 - Full test automation: Unit tests, playwright tests, and integrated testing
 - ChatGPT integration for spending summaries and personized financial advice
 
@@ -26,10 +26,11 @@ MoneyTree is a visually engaging and intuitive budget management web application
 ### Budget Management View
 
 - Manage financial history by adding new budgets or updating existing ones
+- Integrated with Firebase
 
 ### Insights View
 
-- Integration with OpenAI API for personalized spending summaries and advice
+- Integration with OpenAI API for personalized summaries and advice based on user spending history
 
 ## Technology Stack
 
@@ -103,7 +104,7 @@ mvn package
 - Navigate to the Budgets page to create new budget categories.
 - Provide details such as the category name, budget limit, duration, plant type, and any initial spending.
 - Submit the form to add a new plant to your garden view.
-- Access budget history with options to update or delete individual budgets on this page.
+- , with options to update or delete individual budgets on this page.
   ![homepage](./screenshots/budgetspage.png)
 
 ### Track Spending
@@ -113,7 +114,7 @@ mvn package
 
 ### Receive Financial Insights
 
-- Access personalized summaries and advice through integration with OpenAI’s API.
+- Access personalized summaries and advice through integration with ChatGPT's API.
 - Navigate to the Insights page to receive tailored spending insights based on your budget data and financial goals.
   ![homepage](./screenshots/insightspage.png)
 
