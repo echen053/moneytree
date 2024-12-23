@@ -10,8 +10,12 @@ MoneyTree is a visually engaging and intuitive budget management web application
 
 ## Features
 
-- Responsive design for mobile and desktop users
-- Unit tests, playwright tests, and integrated testing
+### Design Choices
+
+- Fullstack from React frontend to Java REST backend
+  \_ Responsive UI design for mobile and desktop users
+- Full test automation: Unit tests, playwright tests, and integrated testing
+- ChatGPT integration for spending summaries and personized financial advice
 
 ### Garden View
 
@@ -35,7 +39,7 @@ MoneyTree is a visually engaging and intuitive budget management web application
 - Authentication: Clerk
 - API: OpenAI API
 
-## Installation
+## Install and Run
 
 ### Client
 
@@ -73,17 +77,26 @@ Start the server
 ./run
 ```
 
-## Usage
+Run tests and build
+
+```agsl
+mvn package
+```
+
+## Application Usage
 
 ### Log in or Sign up
 
 - Navigate to the homepage of the website and log in using email.
+  ![homepage](./screenshots/homepage.png)
 
 ### Access your Garden
 
 - After logging in, you’ll be taken to your personalized garden view.
 - Each plant in the garden represents a budget category (e.g., Food, Entertainment, Transportation). The health of the plant (alive, wilting, or dead) corresponds to your spending habits within that category.
 - Click on a plant in the garden to open a modal window where you can update or delete the budget for that category.
+  ![homepage](./screenshots/gardenpage.png)
+  ![homepage](./screenshots/gardenpopup.png)
 
 ### Create and Manage Budgets
 
@@ -91,6 +104,7 @@ Start the server
 - Provide details such as the category name, budget limit, duration, plant type, and any initial spending.
 - Submit the form to add a new plant to your garden view.
 - Access budget history with options to update or delete individual budgets on this page.
+  ![homepage](./screenshots/budgetspage.png)
 
 ### Track Spending
 
@@ -101,6 +115,7 @@ Start the server
 
 - Access personalized summaries and advice through integration with OpenAI’s API.
 - Navigate to the Insights page to receive tailored spending insights based on your budget data and financial goals.
+  ![homepage](./screenshots/insightspage.png)
 
 ## Citation
 
