@@ -27,4 +27,5 @@ RUN chmod +x /server/run
 EXPOSE 3232
 
 # Command to run the application using the run script
-CMD ["sh", "/server/run"]
+#CMD ["sh", "/server/run"]
+CMD ["./run"]
