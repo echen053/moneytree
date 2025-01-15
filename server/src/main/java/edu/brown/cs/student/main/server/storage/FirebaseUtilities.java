@@ -10,11 +10,9 @@ import com.google.cloud.firestore.QuerySnapshot;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.cloud.FirestoreClient;
-import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -23,20 +21,14 @@ import java.util.concurrent.ExecutionException;
 public class FirebaseUtilities implements StorageInterface {
 
   public FirebaseUtilities() throws IOException {
-    // Try loading from classpath
     InputStream serviceAccount =
         getClass().getClassLoader().getResourceAsStream("firebase_config.json");
 
     if (serviceAccount == null) {
-      // Fallback: Load from external path if not found in classpath
-      String workingDirectory = System.getProperty("user.dir");
-      Path firebaseConfigPath = Paths.get(workingDirectory, "resources", "firebase_config.json");
-
-      System.out.println("Loading firebase_config.json from external path: " + firebaseConfigPath);
-      serviceAccount = new FileInputStream(firebaseConfigPath.toString());
-    } else {
-      System.out.println("Loading firebase_config.json from classpath");
+      throw new FileNotFoundException("firebase_config.json not found in classpath");
     }
+
+    System.out.println("Loading firebase_config.json from classpath");
 
     FirebaseOptions options =
         new FirebaseOptions.Builder()
