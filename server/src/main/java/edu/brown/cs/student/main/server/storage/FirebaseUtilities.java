@@ -21,6 +21,7 @@ import java.util.concurrent.ExecutionException;
 public class FirebaseUtilities implements StorageInterface {
 
   public FirebaseUtilities() throws IOException {
+    // Try loading from classpath
     InputStream serviceAccount =
         getClass().getClassLoader().getResourceAsStream("firebase_config.json");
 

@@ -33,6 +33,12 @@
       <artifactId>dotenv-java</artifactId>
       <version>3.0.0</version>
     </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-netty</artifactId>
+      <version>1.56.0</version>
+      <!-- Use the latest version compatible with your setup -->
+    </dependency>
     <!--
            We use Moshi for serialization/deserialization of JSON data.
            Moshi 1.13.0 was released in December 2021.
@@ -89,6 +95,15 @@
     </dependency>
   </dependencies>
   <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.json</include>
+        </includes>
+      </resource>
+    </resources>
+
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

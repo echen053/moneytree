@@ -7,8 +7,8 @@ WORKDIR /server
 # Copy the project files into the container
 COPY . .
 
-# Build the project using Maven
-RUN mvn clean package
+# Build the project using Maven (skip tests if not needed during build)
+RUN mvn clean package -DskipTests
 
 # Use a smaller JRE image for running the app
 FROM eclipse-temurin:17-jre
@@ -27,5 +27,4 @@ RUN chmod +x /server/run
 EXPOSE 3232
 
 # Command to run the application using the run script
-#CMD ["sh", "/server/run"]
 CMD ["./run"]
