@@ -37,6 +37,7 @@ public class FirebaseUtilities implements StorageInterface {
             .build();
 
     FirebaseApp.initializeApp(options);
+    System.out.println("Loaded firebase_config.json with db url: ");
   }
 
   public List<Map<String, Object>> getCollection(String collection_id)
