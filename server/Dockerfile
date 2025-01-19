@@ -24,4 +24,4 @@ EXPOSE 3232
 
 # Command to run the application using the run script
 # CMD ["java", "-jar", "target/s0-1.0-SNAPSHOT.jar"]
-CMD ["java", "-cp", ".:target/s0-1.0-SNAPSHOT.jar", "edu.brown.cs.student.main.server.Server"]
+CMD ["java", "-cp", "/etc/secrets/:target/s0-1.0-SNAPSHOT.jar", "edu.brown.cs.student.main.server.Server"]
