@@ -11,18 +11,13 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Use a smaller JRE image for running the app
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:21-jre
 
 # Set the working directory to /server
 WORKDIR /server
 
 # Copy the built JAR file and run script from the build stage
 COPY --from=build /server/target/s0-1.0-SNAPSHOT.jar /server/target/s0-1.0-SNAPSHOT.jar
-COPY --from=build /server/run /server/run
-COPY --from=build /server/.env /server/.env
-
-# Make the run script executable
-RUN chmod +x /server/run
 
 # Expose port 3232 (the port your server runs on)
 EXPOSE 3232
