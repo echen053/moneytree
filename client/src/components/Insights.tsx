@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { getSummary, getAdvice } from "../utils/api";
 import "../styles/Insights.css";
 
@@ -20,9 +19,6 @@ interface InsightsProps {
   >;
 }
 
-// const HOST = "http://localhost:3232";
-const HOST = "https://moneytree-server.onrender.com";
-
 const Insights: React.FC<InsightsProps> = ({
   userId,
   goal,
@@ -36,12 +32,6 @@ const Insights: React.FC<InsightsProps> = ({
   error,
   setError,
 }) => {
-  // const [goal, setGoal] = useState("");
-  // const [summary, setSummary] = useState("");
-  // const [advice, setAdvice] = useState("");
-  // const [loading, setLoading] = useState({ summary: false, advice: false });
-  // const [error, setError] = useState({ summary: "", advice: "" });
-
   const handleGenerateSummary = async () => {
     setLoading((prev) => ({ ...prev, summary: true }));
     setError((prev) => ({ ...prev, summary: "" }));

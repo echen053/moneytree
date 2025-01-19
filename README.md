@@ -57,6 +57,7 @@ MoneyTree is a visually engaging and intuitive budget management web application
    ```agsl
    VITE_CLERK_PUBLISHABLE_KEY=<your-clerk-publishable-key>
    CLERK_SECRET_KEY=<your-clerk-secret-key>
+   VITE_HOST=http://localhost:3232
    ```
 
 2. Server Directory (`/server`)
