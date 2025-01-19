@@ -1,5 +1,11 @@
 # MoneyTree 🌱
 
+## Deployed Website
+
+https://moneytree-henna.vercel.app/
+
+Frontend deployed via Vercel. Backend deployed via Render. Note that using the free hobby plan, web server instances on the free tier automatically shut down if they don’t receive traffic for 15 minutes. When a new request comes in, they can take up to a minute to spin back up, which may affect response time.
+
 ## Contributors
 
 Emma Chen (Brown '27), Erin Kim (Brown '27), Katerina Nguyen (Brown '27), Sophia Li (Brown '27)
@@ -41,6 +47,29 @@ MoneyTree is a visually engaging and intuitive budget management web application
 - API: OpenAI API
 
 ## Install and Run
+
+### Credential Setup
+
+1. Client Directory (`/client`)
+
+   Create a .env file in the client directory and add the Clerk authentication keys:
+
+   ```agsl
+   VITE_CLERK_PUBLISHABLE_KEY=<your-clerk-publishable-key>
+   CLERK_SECRET_KEY=<your-clerk-secret-key>
+   ```
+
+2. Server Directory (`/server`)
+
+   Create a .env file in the server directory and add your OpenAI API key:
+
+   ```agsl
+   OPENAI_API_KEY=<your-openai-api-key>
+   ```
+
+3. Firebase Configuration
+
+   Place a firebase_config.json file in the server directory with your Firebase service account credentials.
 
 ### Client
 
