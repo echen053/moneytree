@@ -20,7 +20,8 @@ interface InsightsProps {
   >;
 }
 
-const HOST = "http://localhost:3232";
+// const HOST = "http://localhost:3232";
+const HOST = "https://moneytree-server.onrender.com";
 
 const Insights: React.FC<InsightsProps> = ({
   userId,

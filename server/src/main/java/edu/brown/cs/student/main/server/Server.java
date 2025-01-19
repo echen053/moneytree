@@ -1,6 +1,7 @@
 package edu.brown.cs.student.main.server;
 
 import static spark.Spark.after;
+import static spark.Spark.before;
 
 import edu.brown.cs.student.main.server.handlers.AddHandler;
 import edu.brown.cs.student.main.server.handlers.DeleteHandler;
@@ -22,6 +23,16 @@ public class Server {
   public static void setUpServer() {
     int port = 3232;
     Spark.port(port);
+
+    // Add a CORS filter
+    before(
+        (request, response) -> {
+          response.header("Access-Control-Allow-Origin", "*");
+          response.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+          response.header(
+              "Access-Control-Allow-Headers",
+              "Content-Type, Authorization, Content-Length, X-Requested-With");
+        });
 
     after(
         (Filter)
