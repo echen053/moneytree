@@ -48,9 +48,8 @@ public class FirebaseUtilities implements StorageInterface {
 
     Firestore db = FirestoreClient.getFirestore();
     // 1: Make the data payload to add to your collection
-    // CollectionReference dataRef = db.collection("users").document(uid).collection(collection_id);
     CollectionReference dataRef = db.collection(collection_id);
-    // 2: Get pin documents
+    // 2: Get user documents
     QuerySnapshot dataQuery = dataRef.get().get();
 
     // 3: Get data from document queries
@@ -114,27 +113,6 @@ public class FirebaseUtilities implements StorageInterface {
     } catch (Exception e) {
       System.err.println("Error deleting document: " + e.getMessage());
       e.printStackTrace();
-    }
-  }
-
-  // recursively removes all the documents and collections inside a collection
-  // https://firebase.google.com/docs/firestore/manage-data/delete-data#collections
-  private void deleteCollection(CollectionReference collection) {
-    try {
-
-      // get all documents in the collection
-      ApiFuture<QuerySnapshot> future = collection.get();
-      List<QueryDocumentSnapshot> documents = future.get().getDocuments();
-
-      // delete each document
-      for (QueryDocumentSnapshot doc : documents) {
-        doc.getReference().delete();
-      }
-
-      // NOTE: the query to documents may be arbitrarily large. A more robust
-      // solution would involve batching the collection.get() call.
-    } catch (Exception e) {
-      System.err.println("Error deleting collection : " + e.getMessage());
     }
   }
 }
