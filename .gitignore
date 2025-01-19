@@ -23,3 +23,5 @@ playwright/.cache/
 
 # Firebase
 resources/
+firebase_config.json
+
